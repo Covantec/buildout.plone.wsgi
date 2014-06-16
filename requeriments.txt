@@ -1,0 +1,2 @@
+zc.buildout == 2.2.1
+setuptools == 2.2
