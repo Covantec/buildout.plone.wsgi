@@ -44,22 +44,28 @@ Puede acceder a la interfaz administrativa de supervisor en la siguiente direcci
 
 Para iniciar la instancia Zope, ejecute el siguiente comando: ::
 
-  ./bin/plone fg
+  ./bin/plone start
 
 Puede acceder a la ZMI para crear su sitio Plone en la siguiente dirección http://127.0.0.1:8000/manage
 
-Para entrar detener el proceso supervisor, ejecute el siguiente comando: ::
+Para detener algun proceso en supervisor, ejecute el siguiente comando: ::
 
   ./bin/supervisorctl -i
   gunicorn                         RUNNING    pid 28138, uptime 0:00:01
   zeo                              RUNNING    pid 28139, uptime 0:00:01
   supervisor>
 
-Para detener cada proceso, ejecute el siguiente comando: ::
+Para detener todos los procesos, ejecute el siguiente comando: ::
 
-  supervisor> stop zeo
-  supervisor> stop gunicorn
+  supervisor> stop all
+  gunicorn: stopped
+  zeo: stopped
+  supervisor>
 
 Para salir del shell interactivo de supervisor, ejecute el siguiente comando: ::
 
   supervisor> exit
+
+Para detener la instancia Zope, ejecute el siguiente comando: ::
+
+  ./bin/plone stop
